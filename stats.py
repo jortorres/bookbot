@@ -1,8 +1,5 @@
 def get_num_words(num): # funciton to count words in file
-    count = 0 # track words
-    for i in num.split(): # takes string, splits into words, counts each word.
-        count += 1
-    return count
+    return len(num.split())
 
 def char_count(char): # function to count characters, put in dictionary
     dic_char_count = {} # init dictionary
@@ -15,12 +12,12 @@ def char_count(char): # function to count characters, put in dictionary
             dic_char_count[char_lower] = 1 # else if new add 1
     return dic_char_count
 
-def sort_on(dict): # return key
-    return dict["count"]
+def sort_on(item): # return key
+    return item["count"]
 
-def sort_list(dict): # sort dictionary by key
+def sort_list(dictionary): # sort dictionary by key
     resultList = []
-    for key, val in dict.items():
+    for key, val in dictionary.items():
         char_dict = {"character": key, "count": val} # put in new list
         resultList.append(char_dict) # add to list
     resultList.sort(reverse=True, key=sort_on) # sort

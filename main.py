@@ -8,19 +8,19 @@ def get_book_text(self): # function to get text from .txt file and put into stri
     return file_contents  # return string
        
 def main():  # main funciton
-
-   num_words = get_num_words(get_book_text("books/frankenstein.txt")) #get num of words
-   num_char = char_count(get_book_text("books/frankenstein.txt")) #get num of chars
-   new_result = []   
    
+   book_text = get_book_text("books/frankenstein.txt") # get book text
+   num_words = get_num_words(book_text) #get num of words
+   num_char = char_count(book_text) #get num of chars
+  
    print("============ BOOKBOT ============")
    print("Analyzing book found at books/frankenstein.txt...")
-   print("----------- Word Count ----------")
+   print("----------- Word Count -----------")
    print(f"Found {num_words} total words")
    print(f"--------- Character Count -------")
-   new_result = sort_list(num_char) # get sorted list from dictionary
+   #new_result = sort_list(num_char) # get sorted list from dictionary
 
-   for new in new_result:  # print nicely and remove alphabetical chars
+   for new in sort_list(num_char):  # print nicely and remove alphabetical chars
        if new["character"].isalpha():
           print(f"{new['character']}: {new['count']}")
    print("============= END ===============")
